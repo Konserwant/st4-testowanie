@@ -1,0 +1,53 @@
+﻿@model PortalOgloszen.Models.Ogloszenie
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Szczegoly ogloszenia</h1>
+
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImageLink)
+        </dt>
+        <dd class = "col-sm-10">
+            <img style="max-height:300px;max-width:280px;height:auto;width:auto;" src="@Url.Content(@Model.ImageLink)" alt= "@Model.ImageLink" />
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PublishDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PublishDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Delete" asp-route-id="@Model.Id">Usun ogloszenie</a><br />
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edytuj ogloszenie</a><br />
+    <a asp-action="Index">Wroc do listy ogloszen</a>
+</div>

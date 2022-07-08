@@ -1,0 +1,53 @@
+﻿@model PortalOgloszen.Models.Ogloszenie
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<h3>Jesteś pewien, że chcesz usunąć poniższe ogłoszenie?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImageLink)
+        </dt>
+        <dd class = "col-sm-10">
+            <img style="max-height:300px;max-width:280px;height:auto;width:auto;" src="@Url.Content(@Model.ImageLink)" alt= "@Model.ImageLink" />
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PublishDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PublishDate)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Usun ogloszenie" class="btn btn-danger" /> |
+        <a asp-action="Index">Wroc do listy ogloszen</a>
+    </form>
+</div>

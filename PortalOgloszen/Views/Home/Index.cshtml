@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Witaj na portalu z ogłoszeniami</h1><br />
+    <h2 class="display-6">Dodaj swoje ogloszenie lub przeglądaj ogłoszenia innych!</h2>
+    <input type="button" value="Dodaj Ogloszenie" onclick="location.href='@Url.Action("Create", "Ogloszenie")'" />
+    <input type="button" value="Przegladaj Ogloszenia" onclick="location.href='@Url.Action("Index", "Ogloszenie")'" />
+</div>
